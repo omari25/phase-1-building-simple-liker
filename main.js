@@ -5,17 +5,17 @@ const FULL_HEART = '♥'
 // Your JavaScript code goes here!
 
 const heart = document.querySelectorAll(".like-glyph");
-const error = document.getElementById('modal');
+const error = document.getElementById('#modal');
 
 for (const one of heart) {
   one.addEventListener("click", () => {
     mimicServerCall("http://mimicServer.example.com")
     .then(() => {
-      if (heart.textContent === EMPTY_HEART) {
-        heart.textContent = FULL_HEART;
-        heart.className = "activated-heart";
-      } else if(heart.textContent === FULL_HEART){
-        heart.textContent = EMPTY_HEART;
+      if (one.textContent === EMPTY_HEART) {
+        one.textContent = FULL_HEART;
+        one.className = "activated-heart";
+      } else{
+        one.textContent = EMPTY_HEART;
       }
     })
     .catch(err => {
